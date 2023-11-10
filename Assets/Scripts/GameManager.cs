@@ -8,11 +8,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
         
-    public GameObject objectToSpawn;
+    private GameObject objectToSpawn;
     public Collider collider;
     public GameObject Ship;
 
     public GameObject startingPoint;
+
+    public GameObject openedCargo;
+    public GameObject closedCargo;
 
     private bool canSpawn = true;
     private int c = 0;
@@ -26,10 +29,19 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
     }
-
+    public void SpawnOpenCargo()
+    {
+        objectToSpawn = openedCargo;
+    }
+    public void SpawnClosedCargo()
+    {
+        objectToSpawn = closedCargo;
+    }
     private void Start()
     {
+        SpawnClosedCargo();
         StartCoroutine(SpawnAfterTime());
+        SpawnShip();
     }
 
     void SpawnShip()
