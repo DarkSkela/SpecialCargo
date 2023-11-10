@@ -111,7 +111,7 @@ public class ShipMovement : MonoBehaviour
             int count = stackedBoxes.Count;
             for (int i = 0; i < count; i++)
             {
-                stackedBoxes.Remove(stackedBoxes[i]);
+                stackedBoxes.Remove(stackedBoxes[0]);
                 Destroy(boxesParent.GetChild(i).gameObject);
             }
 

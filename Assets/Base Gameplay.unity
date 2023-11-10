@@ -711,51 +711,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allSfx.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allMusic.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allSfx.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0341fc0243ec2e84fbbcf67c2bb4aee4, type: 3}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allSfx.Array.data[0].name
-      value: Snap
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allMusic.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7e725fb3379b1f84ca47d9d6033a2cd8, type: 3}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allMusic.Array.data[0].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allMusic.Array.data[0].name
-      value: Wave
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allMusic.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196298371810518229, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
-        type: 3}
-      propertyPath: allMusic.Array.data[0].volume
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 7065817402820989675, guid: a7fd80a7273c0e644bab8ba91f5f2bd8,
         type: 3}
       propertyPath: m_Name
@@ -1545,16 +1500,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3092448689116238851, guid: 414559f90eaaf0649880bf582954a05e,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.19647232
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092448689116238851, guid: 414559f90eaaf0649880bf582954a05e,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.401764
-      objectReference: {fileID: 0}
     - target: {fileID: 7059400356269898764, guid: 414559f90eaaf0649880bf582954a05e,
         type: 3}
       propertyPath: m_Name
@@ -1577,6 +1522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186859137382458331, guid: d44c42abf44ac06429918e741f02d03c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4562705468339255146, guid: d44c42abf44ac06429918e741f02d03c,
         type: 3}
