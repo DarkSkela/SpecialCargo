@@ -212,7 +212,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e3512e0944b1f2442a6593d0cfd7247b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5686275}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34509805}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 9211668253133965594}
   - component: {fileID: 2953361276821044858}
   m_Layer: 0
-  m_Name: grid (2)
+  m_Name: Compass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
