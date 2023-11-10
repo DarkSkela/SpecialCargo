@@ -36,7 +36,7 @@ public class ObstacleManager : MonoBehaviour
 
        if (spawnTimer <= 0f)
        {
-           SpawnObstacle();
+           //SpawnObstacle();
            spawnTimer = spawnDelay;
        }
        
