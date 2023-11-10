@@ -45,5 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
-  Ship: {fileID: 0}
+  Ship: {fileID: 4728509074462587670, guid: d90ca48e826fd904081839bd3d48e1d9, type: 3}
   startingPoint: {fileID: 0}
+  openedCargo: {fileID: 4873824633761380514, guid: c9125fe6870253246acb99c1f326129e,
+    type: 3}
+  closedCargo: {fileID: 2872598678319576113, guid: d95c212bb5465f44990ae3f5aab2c201,
+    type: 3}

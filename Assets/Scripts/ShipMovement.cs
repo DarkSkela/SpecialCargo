@@ -98,8 +98,13 @@ public class ShipMovement : MonoBehaviour
         if(other.CompareTag("Obstacle"))
         {
             //Do somthing
-        }    
+        }
+        if (other.CompareTag("Island"))
+        {
+            Debug.Log("Hit");
+        }
     }
+
 }
 
       
