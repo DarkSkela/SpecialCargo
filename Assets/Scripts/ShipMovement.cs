@@ -37,9 +37,12 @@ public class ShipMovement : MonoBehaviour
             {
                 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
                 Vector3 target2D = new Vector3(target.x, 0.0f, target.z);
-                Quaternion targetRotation = Quaternion.LookRotation(target2D);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
-                
+                Vector3 distVec = target2D - transform.position;
+                if (distVec.magnitude > 1)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(target2D);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
+                }
             }
             
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
