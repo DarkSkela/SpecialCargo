@@ -65,6 +65,22 @@ MonoBehaviour:
   m_SampleCount:
     m_OverrideState: 1
     m_Value: 8
+--- !u!114 &-6544382121607706061
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e016794fe679f41b56b0d0b5208cae, type: 3}
+  m_Name: Greyscale
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &-1016694868962581565
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -137,6 +153,7 @@ MonoBehaviour:
   - {fileID: 448115243408767295}
   - {fileID: -7089757308646879465}
   - {fileID: -8500501345142028434}
+  - {fileID: -6544382121607706061}
 --- !u!114 &448115243408767295
 MonoBehaviour:
   m_ObjectHideFlags: 3
