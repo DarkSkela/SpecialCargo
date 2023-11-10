@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnObject()
     {
-        if (c < 9)
+        if (c < 7)
         {
             if (objectToSpawn != null)
             {

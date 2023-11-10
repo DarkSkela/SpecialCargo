@@ -7,24 +7,26 @@ public class ShipMovement : MonoBehaviour
     public float speed = 10f;
     public float rotSpeed = 5f;
     private bool dragging = false;
-    Vector3 target = new Vector3(0,0,0f);
+    Vector3 target = new Vector3(0, 0, 0f);
     public LayerMask raycastMask;
 
     private bool canMove = false;
     // Start is called before the first frame update
 
-   // public List<GameObject> coll;
+    // public List<GameObject> coll;
 
     public Vector2 gridSize = new Vector2(1f, 1f);
     public Transform boxesParent; // Assign the empty GameObject as the parent in the inspector
 
     private List<Transform> stackedBoxes = new List<Transform>();
     private List<Vector3> boxPositions = new List<Vector3>();
+
+
     void Start()
     {
         for (int i = 0; i < gridSize.x; i++)
         {
-            for(int j = 0; j < gridSize.y; j++)
+            for (int j = 0; j < gridSize.y; j++)
             {
                 boxPositions.Add(new Vector3(boxesParent.position.x + i, boxesParent.position.y, boxesParent.position.z + j));
             }
@@ -46,11 +48,11 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canMove)
+        if (canMove)
         {
             if (dragging)
             {
-                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit, Mathf.Infinity, raycastMask))
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit, Mathf.Infinity, raycastMask))
                 {
                     target = hit.point;
                     Debug.DrawLine(transform.position, hit.point, Color.red);
@@ -65,15 +67,15 @@ public class ShipMovement : MonoBehaviour
                     }
                 }
             }
-            
+
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
-      
+
     }
 
     void StackBox(Transform box)
     {
-        if (!stackedBoxes.Contains(box))
+        if (!stackedBoxes.Contains(box) && stackedBoxes.Count < (gridSize.x * gridSize.y))
         {
             Vector3 newPosition = CalculateGridPosition(stackedBoxes.Count);
 
@@ -101,8 +103,9 @@ public class ShipMovement : MonoBehaviour
         }
         if (other.CompareTag("Island"))
         {
-            UIManager.Instance.UpdateMoneyAmount(stackedBoxes.Count * 10);
-            transform.position = new Vector3(transform.position.x, transform.position.y,other.contactOffset);
+            UIManager.Instance.UpdateMoneyAmount((stackedBoxes == null? 0: stackedBoxes.Count) * 10);
+            //transform.position = new Vector3(transform.position.x, transform.position.y,other.contactOffset);
+            canMove = false;
         }
     }
 

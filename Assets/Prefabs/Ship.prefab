@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5da0d6bda0967b42b03a5ba8f9204ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  rotSpeed: 1.5
+  speed: 4
+  rotSpeed: 2
   raycastMask:
     serializedVersion: 2
     m_Bits: 8

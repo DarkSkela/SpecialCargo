@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateHumanAmount(0);
         UpdateMoneyAmount(0);
+        UpdateShipAmount(1);
     }
 
     // Update is called once per frame

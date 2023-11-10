@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 6134364145035367135}
   - component: {fileID: 8915726169695260940}
   - component: {fileID: 7184114374504157302}
+  - component: {fileID: 480533491357724317}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -238,6 +239,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &480533491357724317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398138366413462950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dc82d0044670944a8481565a06105d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyText: {fileID: 7743479066024847894}
+  ShipAmountText: {fileID: 5941958322889781798}
+  HumanAmountText: {fileID: 5685702823015886877}
+  Money: 0
+  Ship: 0
+  Human: 0
 --- !u!1 &1984601978167837044
 GameObject:
   m_ObjectHideFlags: 0
