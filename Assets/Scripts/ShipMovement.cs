@@ -15,7 +15,9 @@ public class ShipMovement : MonoBehaviour
     Vector3 pos = new Vector3(0,0,1f);
 
     public Transform cube;
+    [SerializeField]
     private bool canMove = false;
+    //public Transform cargoSlot;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,12 +59,25 @@ public class ShipMovement : MonoBehaviour
         }
       
     }
+    //void SnapToCargoSlot()
+    //{
+    //    Collider[] hitColliders = Physics.OverlapSphere(cargoSlot.position, 2.0f);
+    //    foreach (Collider col in hitColliders)
+    //    {
+    //        if (col.CompareTag("Cargo"))
+    //        {
+    //            col.transform.position += cargoSlot.position;
+    //           // col.transform.parent = cargoSlot;
 
-    private void OnTriggerEnter(Collider other)
+    //        }
+    //    }
+    //}
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.CompareTag("Obstacle"))
+        if(collision.gameObject.CompareTag("Cargo"))
         {
-            //Do somthing
+            // collision.transform.position = transform.position + new Vector3(0, 1f, 0);
+            //SnapToCargoSlot();
         }    
     }
 }

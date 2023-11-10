@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Ship
+  - Cargo
   layers:
   - Default
   - TransparentFX
