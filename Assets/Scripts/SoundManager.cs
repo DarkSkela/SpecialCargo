@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour
     {
         SetAllSfx();
         SetAllMusic();
-        PlayMusic("BGM");
+       // PlayMusic("BGM");
     }
 
     public void SetSFXVolume(float value)

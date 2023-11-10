@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         SpawnClosedCargo();
         StartCoroutine(SpawnAfterTime());
         SpawnShip();
+        SoundManager.Instance.PlayMusic("Wave");
     }
 
     void SpawnShip()
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             if (objectToSpawn != null)
             {
+                SoundManager.Instance.PlaySfx("SpawnBox");
                 Vector3 spawnPosition = GetRandomPositionInCollider();
                 Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
                 c++;

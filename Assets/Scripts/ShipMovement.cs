@@ -77,6 +77,7 @@ public class ShipMovement : MonoBehaviour
     {
         if (!stackedBoxes.Contains(box) && stackedBoxes.Count < (gridSize.x * gridSize.y))
         {
+            SoundManager.Instance.PlaySfx("Snap");
             Vector3 newPosition = CalculateGridPosition(stackedBoxes.Count);
 
             box.parent = boxesParent;
@@ -92,20 +93,32 @@ public class ShipMovement : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Cargo"))
+        if (other.gameObject.CompareTag("Cargo") && !canMove)
         {
             StackBox(other.transform);
         }
         
         if(other.CompareTag("Obstacle"))
         {
-           
+            Destroy(gameObject);
         }
         if (other.CompareTag("Island"))
         {
             UIManager.Instance.UpdateMoneyAmount((stackedBoxes == null? 0: stackedBoxes.Count) * 10);
             //transform.position = new Vector3(transform.position.x, transform.position.y,other.contactOffset);
             canMove = false;
+
+            int count = stackedBoxes.Count;
+            for (int i = 0; i < count; i++)
+            {
+                stackedBoxes.Remove(stackedBoxes[i]);
+                Destroy(boxesParent.GetChild(i).gameObject);
+            }
+
+            //for (int i = 0; i < boxesParent.childCount; i++)
+            //{
+            //    Destroy(boxesParent.GetChild(i));
+            //}
         }
     }
 
