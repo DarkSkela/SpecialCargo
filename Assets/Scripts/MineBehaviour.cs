@@ -7,8 +7,7 @@ public class MineBehaviour : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        //TODO: Check if other is type boat below, now true for testing
-        if (true)
+        if (other.tag.Equals("Ship"))
         {
             Explode();
         }
