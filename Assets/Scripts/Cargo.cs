@@ -5,10 +5,12 @@ using UnityEngine;
 public class Cargo : MonoBehaviour
 {
     private bool attached = false;
+    public LayerMask raycastMask;
+    private Vector3 origin;
     // Start is called before the first frame update
     void Start()
     {
-        
+        origin = transform.position;
     }
 
     private void OnMouseDown()
@@ -17,6 +19,11 @@ public class Cargo : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        if (attached)
+        {
+            transform.position = origin;
+        }
+
         attached = false;
     }
 
@@ -24,15 +31,18 @@ public class Cargo : MonoBehaviour
     {
         if (attached)
         {
-            transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20.0f));
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit, Mathf.Infinity, raycastMask))
+            {
+                transform.position = hit.point + new Vector3(0, 3f, 0);
+            }
         }
     }
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Ship"))
         {
-            transform.position = collision.GetComponent<ShipMovement>().boxesParent.position + new Vector3(0,1f,0);
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            attached = false;
         }
     }
 }
