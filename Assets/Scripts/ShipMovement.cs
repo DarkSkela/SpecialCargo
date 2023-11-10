@@ -15,6 +15,7 @@ public class ShipMovement : MonoBehaviour
     Vector3 pos = new Vector3(0,0,1f);
 
     public Transform cube;
+    private bool canMove = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,20 +38,24 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(dragging)
+        if(canMove)
         {
-          // transform.LookAt(new Vector3( Input.mousePosition.x, 0, Input.mousePosition.y));
-            pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f))+ offset;
-            // rb.MovePosition(new Vector3(pos.x, transform.position.y, pos.z));
-            rb.AddForce(new Vector3(pos.x, 0, pos.z) * speed * Time.deltaTime);
-            // var p = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
-            //cube.LookAt(new Vector3(p.x, 0, p.z));
-          
+            if (dragging)
+            {
+                // transform.LookAt(new Vector3( Input.mousePosition.x, 0, Input.mousePosition.y));
+                pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f)) + offset;
+                // rb.MovePosition(new Vector3(pos.x, transform.position.y, pos.z));
+                rb.AddForce(new Vector3(pos.x, 0, pos.z) * speed * Time.deltaTime);
+                // var p = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
+                //cube.LookAt(new Vector3(p.x, 0, p.z));
 
+
+            }
+            rb.AddForce(pos);
+            Quaternion targetRotation = Quaternion.LookRotation(pos);
+            cube.rotation = Quaternion.Slerp(cube.rotation, targetRotation, rotSpeed * Time.deltaTime);
         }
-        rb.AddForce(pos);
-        Quaternion targetRotation = Quaternion.LookRotation(pos);
-        cube.rotation = Quaternion.Slerp(cube.rotation, targetRotation, rotSpeed * Time.deltaTime);
+      
     }
 
     private void OnTriggerEnter(Collider other)
