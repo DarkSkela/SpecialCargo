@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 4387060025539826712}
   - component: {fileID: 5149684382933126234}
   - component: {fileID: 5618068458408742925}
-  - component: {fileID: 4474371164156172955}
   - component: {fileID: 7981601623089808482}
+  - component: {fileID: 8848599077805412587}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Ship
@@ -117,27 +117,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4474371164156172955
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728509074462587670}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13.336124, y: 1, z: 21.526543}
-  m_Center: {x: -1.5544813, y: 0, z: -4.308283}
 --- !u!114 &7981601623089808482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +137,25 @@ MonoBehaviour:
   cargoSlot: {fileID: 3355854181446474949}
   gridSize: {x: 1, y: 1}
   boxesParent: {fileID: 3355854181446474949}
+--- !u!64 &8848599077805412587
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728509074462587670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 6298923cd799bcb4f9e47ab5875d0620, type: 3}

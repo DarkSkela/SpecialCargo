@@ -277,34 +277,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1458462083 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4728509074462587670, guid: d90ca48e826fd904081839bd3d48e1d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1663961521}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1458462089
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458462083}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 6298923cd799bcb4f9e47ab5875d0620, type: 3}
 --- !u!1 &1555576166
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,15 +779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4474371164156172955, guid: d90ca48e826fd904081839bd3d48e1d9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4728509074462587670, guid: d90ca48e826fd904081839bd3d48e1d9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1458462089}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d90ca48e826fd904081839bd3d48e1d9, type: 3}
 --- !u!1001 &1621084384556532786
 PrefabInstance:
