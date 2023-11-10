@@ -8,6 +8,7 @@ public class ShipMovement : MonoBehaviour
     public float rotSpeed = 5f;
     private bool dragging = false;
     Vector3 target = new Vector3(0,0,0f);
+    public LayerMask raycastMask;
     
     private bool canMove = false;
     public Transform cargoSlot;
@@ -43,13 +44,16 @@ public class ShipMovement : MonoBehaviour
         {
             if (dragging)
             {
-                target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-                Vector3 target2D = new Vector3(target.x, 0.0f, target.z);
-                Vector3 distVec = target2D - transform.position;
-                if (distVec.magnitude > 1)
+                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit, Mathf.Infinity, raycastMask))
                 {
-                    Quaternion targetRotation = Quaternion.LookRotation(target2D);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
+                    target = hit.point;
+                    Vector3 target2D = new Vector3(target.x, 0.0f, target.z);
+                    Vector3 distVec = target2D - transform.position;
+                    if (true)
+                    {
+                        Quaternion targetRotation = Quaternion.LookRotation(target2D);
+                        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
+                    }
                 }
             }
             
