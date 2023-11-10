@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     public GameObject objectToSpawn;
     public Collider collider;
     public GameObject Ship;
+
+    public GameObject startingPoint;
+
+    private bool canSpawn = true;
+    private int c = 0;
     private void Awake()
     {
         if(Instance == null)
@@ -24,27 +29,52 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnObject();
+        StartCoroutine(SpawnAfterTime());
+    }
+
+    void SpawnShip()
+    {
+        Instantiate(Ship, startingPoint.transform.position, startingPoint.transform.rotation);
+    }
+    IEnumerator SpawnAfterTime()
+    {
+        while (Application.isPlaying)
+        {
+            yield return new WaitForSeconds(3);
+            SpawnObject(); 
+        }
     }
     
 
     void SpawnObject()
     {
-  
-        if (objectToSpawn != null)
+        if (c < 9)
         {
-            Vector3 spawnPosition = GetRandomPositionInCollider();
-            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+            if (objectToSpawn != null)
+            {
+                Vector3 spawnPosition = GetRandomPositionInCollider();
+                Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                c++;
+            }
+            else
+            {
+                Debug.LogWarning("Prefab for spawning is not assigned!");
+            }
         }
-        else
+       
+    }
+
+    public void DecrementBoxCount()
+    {
+        if (c > 0)
         {
-            Debug.LogWarning("Prefab for spawning is not assigned!");
+            c--;
         }
     }
 
     Vector3 GetRandomPositionInCollider()
     {
-         collider = GetComponent<Collider>();
+         //collider = GetComponent<Collider>();
 
         if (collider != null)
         {
