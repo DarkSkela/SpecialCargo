@@ -27,12 +27,12 @@ public class Cargo : MonoBehaviour
             transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20.0f));
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.CompareTag("Ship"))
-    //    {
-    //        transform.position = GameManager.Instance.Ship.transform.position + new Vector3(0,1f,0);
-
-    //    }
-    //}
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.CompareTag("Ship"))
+        {
+            transform.position = collision.GetComponent<ShipMovement>().boxesParent.position + new Vector3(0,1f,0);
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
 }
