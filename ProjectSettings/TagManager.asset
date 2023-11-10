@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: water
+    uniqueID: 3167078931
+    locked: 0
+  - name: land
+    uniqueID: 3177531873
+    locked: 0
+  - name: deets
+    uniqueID: 3736871335
+    locked: 0
