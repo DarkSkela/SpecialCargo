@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public Animator anim;
   public void StartGame()
     {
         Debug.Log("Game Start");
+        anim.SetTrigger("Play");
+
+    }
+
+    public void LoadGame(AnimationEvent e)
+    {
         SceneManager.LoadScene("Game");
+        Debug.Log("Scene Loaded");
     }
 
     public void QuitGame()
