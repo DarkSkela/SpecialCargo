@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Instance;
 
+    public int Money = 0;
+    public int Ship = 0;
+    public int Human = 0;
+
     private void Awake()
     {
         if (Instance == null)
@@ -23,22 +27,26 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateMoneyAmount(float Money)
+    public void UpdateMoneyAmount(int _Money)
     {
+        Money += _Money;
         MoneyText.text = Money.ToString();
     }
-    public void UpdateHumanAmount(float Human)
+    public void UpdateHumanAmount(int _Human)
     {
-        MoneyText.text = Human.ToString();
+        Human = _Human;
+        HumanAmountText.text = Human.ToString();
     }
-    public void UpdateShipAmount(float Ship)
+    public void UpdateShipAmount(int _Ship)
     {
-        MoneyText.text = Ship.ToString();
+        Ship = _Ship;
+        ShipAmountText.text = Ship.ToString();
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateHumanAmount(0);
+        UpdateMoneyAmount(0);
     }
 
     // Update is called once per frame

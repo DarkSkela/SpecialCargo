@@ -97,11 +97,12 @@ public class ShipMovement : MonoBehaviour
         
         if(other.CompareTag("Obstacle"))
         {
-            //Do somthing
+           
         }
         if (other.CompareTag("Island"))
         {
-            Debug.Log("Hit");
+            UIManager.Instance.UpdateMoneyAmount(stackedBoxes.Count * 10);
+            transform.position = new Vector3(transform.position.x, transform.position.y,other.contactOffset);
         }
     }
 
