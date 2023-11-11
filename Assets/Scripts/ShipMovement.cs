@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ShipMovement : MonoBehaviour
 {
     public float speed = 10f;
@@ -100,7 +100,13 @@ public class ShipMovement : MonoBehaviour
         
         if(other.CompareTag("Obstacle"))
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            // SceneManager.LoadScene(0);
+            RemoveBoxes();
+            canMove = false;
+            transform.position = GameManager.Instance.startingPoint.transform.position;
+            transform.rotation = GameManager.Instance.startingPoint.transform.rotation;
+            UIManager.Instance.UpdateMoneyAmount(0);
         }
         if (other.CompareTag("Island"))
         {
@@ -108,17 +114,26 @@ public class ShipMovement : MonoBehaviour
             //transform.position = new Vector3(transform.position.x, transform.position.y,other.contactOffset);
             canMove = false;
 
-            int count = stackedBoxes.Count;
-            for (int i = 0; i < count; i++)
-            {
-                stackedBoxes.Remove(stackedBoxes[0]);
-                Destroy(boxesParent.GetChild(i).gameObject);
-            }
+            RemoveBoxes();
 
+            transform.position = GameManager.Instance.startingPoint.transform.position;
+            transform.rotation = GameManager.Instance.startingPoint.transform.rotation;
+          
             //for (int i = 0; i < boxesParent.childCount; i++)
             //{
             //    Destroy(boxesParent.GetChild(i));
             //}
+        }
+    }
+   
+
+    void RemoveBoxes()
+    {
+        int count = stackedBoxes.Count;
+        for (int i = 0; i < count; i++)
+        {
+            stackedBoxes.Remove(stackedBoxes[0]);
+            Destroy(boxesParent.GetChild(i).gameObject);
         }
     }
 
