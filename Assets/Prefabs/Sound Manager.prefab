@@ -46,8 +46,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78abc6751383d774384e2be3f40e7dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allSfx: []
-  allMusic: []
+  allSfx:
+  - name: Snap
+    clip: {fileID: 8300000, guid: 0341fc0243ec2e84fbbcf67c2bb4aee4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpawnBox
+    clip: {fileID: 8300000, guid: 2f29270622d732d44b341b7bbae8fd38, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  allMusic:
+  - name: Wave
+    clip: {fileID: 8300000, guid: 7e725fb3379b1f84ca47d9d6033a2cd8, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   EffectsSource: {fileID: 2820562799023571523}
   MusicSource: {fileID: 2459275572465075172}
 --- !u!82 &2820562799023571523
