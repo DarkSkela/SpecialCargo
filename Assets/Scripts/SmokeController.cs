@@ -35,7 +35,8 @@ public class SmokeController : MonoBehaviour
         fx.Play();
         Ship = GameObject.FindGameObjectWithTag("Ship");
         yield return new WaitForSeconds(3f);
-        Ship.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        Ship.gameObject.SetActive(false);
+        fx.Stop();
         box.PlayBox();
     }
 }
