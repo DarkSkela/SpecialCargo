@@ -106,7 +106,8 @@ public class ShipMovement : MonoBehaviour
             canMove = false;
             transform.position = GameManager.Instance.startingPoint.transform.position;
             transform.rotation = GameManager.Instance.startingPoint.transform.rotation;
-            UIManager.Instance.UpdateMoneyAmount(0);
+            //UIManager.Instance.UpdateMoneyAmount(0);
+            UIManager.Instance.DeductMoney(30);
         }
         if (other.CompareTag("Island"))
         {

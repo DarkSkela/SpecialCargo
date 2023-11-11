@@ -26,7 +26,17 @@ public class UIManager : MonoBehaviour
             Destroy(this);
         }
     }
-
+    public void DeductMoney(int amount)
+    {
+        if(Money > amount)
+        {
+            Money -= amount;
+        }else
+        {
+            Money = 0;
+        }
+        MoneyText.text = Money.ToString();
+    }
     public void UpdateMoneyAmount(int _Money)
     {
         Money += _Money;
