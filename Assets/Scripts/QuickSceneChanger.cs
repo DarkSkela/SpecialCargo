@@ -7,7 +7,7 @@ public class QuickSceneChanger : MonoBehaviour
 {
    public void LoadSceneOne()
     {
-        SceneManager.LoadScene("Basic Gameplay");
+        SceneManager.LoadScene("Base Gameplay");
 
     }
 

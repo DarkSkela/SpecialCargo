@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame(AnimationEvent e)
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Base Gameplay");
         Debug.Log("Scene Loaded");
     }
 
